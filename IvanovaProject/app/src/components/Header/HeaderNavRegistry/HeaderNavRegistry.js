@@ -81,7 +81,7 @@ class HeaderNavRegistry extends React.Component {
               <label htmlFor="inputName">
                 Введите имя: {this.state.errorInputName ? <img src='../error.png' className="errorImg" alt="error"/> : null}
               </label>
-              <input type="text" className="form-control" id="inputName" onChange={
+              <input type="text" className="form-control" placeholder="Name" id="inputName" onChange={
                 event => {
                   this.checkEmptyName(event);
                   this.setState({name: event.target.value})

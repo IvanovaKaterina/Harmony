@@ -31,7 +31,7 @@ class Masters extends React.Component {
 const Master = (props) => {
   const { title, body, category, img } = props;
   return (
-    <div className="masters-hair master">
+    <div className="master">
       <div className="masters-body">
         <div className="masters-title masters-body-text">
           {title}
@@ -40,18 +40,18 @@ const Master = (props) => {
           {body}
         </div>
         <div className="masters-category masters-body-text">
-          <span className="masters-category-level">
+          <span>
             Категория: {category[0]} разряд
           </span>
-          <span className="masters-category-years">
+          <span>
             Стаж работы: {category[1]} лет
           </span>
-          <span className="masters-category-clients">
+          <span>
             Довольных клиентов: {category[2]}
           </span>
         </div>
       </div>
-      <div className="masters-image masters-image-hair">
+      <div className="masters-image">
         <img src={img} alt="cat"/>
       </div>
     </div>

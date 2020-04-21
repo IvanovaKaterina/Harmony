@@ -7,7 +7,14 @@
     border-radius: 5px;
   }
 
-  .service-registry-title {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
+.service-registry-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.btn-orangeButton {
+  color: white;
+  background-color: rgb(255, 163, 58);
+  border-radius: 10px;
+  width: 120px;
+}

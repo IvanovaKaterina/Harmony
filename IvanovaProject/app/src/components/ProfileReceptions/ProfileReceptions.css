@@ -1,6 +1,5 @@
 .profile {
     padding: 0 25px;
-    border: 1px solid rgb(255, 162, 125);
   }
 
   .profile-row-col {
@@ -12,8 +11,6 @@
   }
 
   .profile-reception-block  {
-    border: 1px solid rgb(255, 162, 125);
-    border-radius: 5px;
     padding: 10px;
     margin: 10px 0;
   }

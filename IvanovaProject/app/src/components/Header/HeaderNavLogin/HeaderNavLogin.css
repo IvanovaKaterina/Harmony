@@ -3,3 +3,9 @@
     width: 20px;
     height: 20px;
   }
+
+  .btn-greyButton {
+    color: white;
+    background-color: grey;
+    border-radius: 10px;
+  }

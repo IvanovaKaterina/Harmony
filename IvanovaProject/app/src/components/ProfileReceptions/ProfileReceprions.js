@@ -23,13 +23,13 @@ const ProfileReceptions = (props) => {
       <div className="mb-3" id="reception-date">
         {props.data.map((item) => (
           <div className="profile-reception-block">
-            <div className="profile-receptions-block-serviceName">
+            <div>
               <span className="profile-reception-block-title">Название услуги:</span> {item.services[0].name}
             </div>
-            <div className="profile-receptions-block-servicePrice">
+            <div>
               <span className="profile-reception-block-title">Цена услуги:</span> {item.services[0].price}р.
             </div>
-            <div className="profile-receptions-block-date">
+            <div>
               <span className="profile-reception-block-title">Дата записи:</span> {item.date}
             </div>
           </div>

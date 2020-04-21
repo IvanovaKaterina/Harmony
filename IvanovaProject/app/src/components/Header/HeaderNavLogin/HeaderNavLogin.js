@@ -57,26 +57,6 @@ class HeaderNavLogin extends React.Component {
   render() {
     return(
       <>
-        <style type="text/css">
-          {`
-            .btn-orangeButton {
-              color: white;
-              background-color: rgb(255, 163, 58);
-              border-radius: 10px;
-            }
-            .btn-greyButton {
-              color: white;
-              background-color: grey;
-              border-radius: 10px;
-            }
-            .btn-nav {
-              color: rgb(117, 65, 65);
-            }
-            .btn-nav:hover {
-              color: rgb(255, 163, 58);
-            }
-          `}
-        </style>
         <a href = "#" className="header-nav-link header-nav-linkSmall col-md-auto" onClick={this.handleShowLogin.bind(this)}>
           Войти
         </a>

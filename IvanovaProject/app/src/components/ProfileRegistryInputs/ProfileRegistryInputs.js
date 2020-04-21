@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
-import { Button, Alert } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+import { DatePicker, Alert } from 'antd';
+import 'antd/dist/antd.css';
 import './ProfileRegistryInputs.css';
 
 const mapStateToProps = state => ({
@@ -68,10 +70,15 @@ class ServiceRegistryInputs extends React.Component {
       this.setState({errorInputPhone: true});
     } else this.setState({errorInputPhone: false});
   }
-  checkEmptyDate(e){
-    if (!e.target.value) {
+  checkEmptyDate(){
+    if (this.state.date) {
       this.setState({errorInputDate: true});
     } else this.setState({errorInputDate: false});
+  }
+
+  onChange(date, dateString) {
+    this.setState({date: dateString});
+    console.log(date, dateString);
   }
 
   componentDidMount(){
@@ -97,26 +104,11 @@ class ServiceRegistryInputs extends React.Component {
     </>
     } else inputs = null;
     return (
-      <>
-        <style type="text/css">
-          {`
-            .btn-orangeButton {
-              color: white;
-              background-color: rgb(255, 163, 58);
-              border-radius: 10px;
-              margin: 0 auto;
-              margin-bottom: 15px;
-              width: 120px;
-            }
-          `}
-      </style>
       <div className="col-auto service-registry" >
         <div className="service-registry-title text-center">
             Запись на услугу
         </div>
-        <Alert show={this.state.showAlert} variant='success'>
-          Вы успешно записались!
-        </Alert>
+        {this.state.showAlert ? <Alert type='success' message='Вы успешно записались!' /> : null}
         <div className="form-group">
           <label htmlFor="serviceTypeRegistry">Тип услуги:</label>
           <input type="text" className="form-control" id="serviceTypeRegistry" value={this.props.serviceType} readOnly/>
@@ -130,9 +122,10 @@ class ServiceRegistryInputs extends React.Component {
           <label htmlFor="serviceDateRegistry">
             Выберите ориентировочную дату записи:{this.state.errorInputDate ? <img src='../error.png' className="errorImg" alt='error'/>: null}
           </label>
-          <input type="datetime-local" className="form-control" id="serviceDateRegistry" onChange={(e) => {
-            this.setState({date: e.target.value})
-            this.checkEmptyDate(e)}}/>
+          <DatePicker className="form-control" onChange={(date, dateString) => {
+            this.setState({date: dateString});
+            this.checkEmptyDate();
+          }}/>
         </div>
           <Button variant="orangeButton" onClick={() => {
             if (!this.state.errorInputName && !this.state.errorInputPhone && !this.state.errorInputDate && !localStorage.getItem("authUser")) {
@@ -144,7 +137,6 @@ class ServiceRegistryInputs extends React.Component {
             Записаться
           </Button>  
       </div>
-      </>
     )
   }
 }

@@ -1,0 +1,22 @@
+.loader {
+  margin-top: 100px;
+}
+
+.text {
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.loader .rot {
+  width: 150px;
+  height: 150px;
+  animation: 1s linear 0s normal none infinite running rot;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

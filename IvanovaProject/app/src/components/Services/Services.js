@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Loader from '../Loader';
 import { servicesFetchData } from '../../redux/reducers/services';
 import { typesFetchData } from '../../redux/reducers/types';
 import { areasFetchData } from '../../redux/reducers/areas';
@@ -8,9 +9,12 @@ import { clickToRegistryService } from '../../redux/reducers/inputs';
 import './Services.css';
 
 const mapStateToProps = state => ({
-  areas: state.areas,
-  types: state.types,
-  services: state.services
+  areas: state.areas.areas,
+  types: state.types.types,
+  services: state.services.services,
+  areasIsFetching: state.areas.isFetching,
+  typesIsFetching: state.types.isFetching,
+  servicesIsFetching: state.services.isFetching
 })
 
 const mapDispatchToProps = dispatch => ({
@@ -21,19 +25,28 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const Services = (props) => {
-  props.areasFetchData('https://harmony757.herokuapp.com/services-areas');
-  props.typesFetchData('https://harmony757.herokuapp.com/services-types');
-  props.servicesFetchData('https://harmony757.herokuapp.com/services');
-
+  useEffect(() => {
+    props.areasFetchData('https://harmony757.herokuapp.com/services-areas');
+    props.typesFetchData('https://harmony757.herokuapp.com/services-types');
+    props.servicesFetchData('https://harmony757.herokuapp.com/services')}, []);
+  const { 
+    areasIsFetching,
+    typesIsFetching,
+    servicesIsFetching,
+    areas,
+    types,
+    services 
+  } = props;
   return (
     <div className="row services-row">
-      {props.areas.map(area => (
+      {areasIsFetching || typesIsFetching || servicesIsFetching  ? <Loader /> :
+      areas.map(area => (
         <div className="col-md-auto services-row-col services-row-col1">
           <div key={area.name} className="services-row-col-title">{area.name}</div>
-          {props.types.filter(type => type.area[0].name === area.name)
+          {types.filter(type => type.area[0].name === area.name)
           .map(type => (
           <ul key={type.name}>{type.name}
-            {props.services.filter(service => service.type[0].name === type.name)
+            {services.filter(service => service.type[0].name === type.name)
             .map(service => (
               <li key={service.name}>
                 <Link to="/services/registry" className="service-registry-link" onClick={(e) => 
