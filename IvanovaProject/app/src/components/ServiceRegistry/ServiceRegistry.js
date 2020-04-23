@@ -8,14 +8,14 @@ const mapStateToProps = state => ({
 })
 
 const ServiceRegistry = (props) => (
-  <div className="row">
+  <div>
    {!props.isSubmit ? <ProfileRegistryInputs/> : <ServiceRegistrySubmit/>}
   </div>
 )
 
 const ServiceRegistrySubmit = () => {
   return (
-    <div className="col-auto service-registry" >
+    <div className="service-registry" >
       <div className="submitedRegistry">
         Вы записаны!
       </div>

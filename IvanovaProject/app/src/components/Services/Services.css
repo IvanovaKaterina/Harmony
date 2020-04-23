@@ -30,15 +30,6 @@
     color: rgb(117, 65, 65);
   }
   
-  .service-registry {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 30px;
-    border: 1px solid rgb(255, 162, 125);
-    border-radius: 5px;
-  }
-  
   .service-registry-link {
     color: rgb(117, 65, 65);
   }

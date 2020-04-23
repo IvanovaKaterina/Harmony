@@ -2,19 +2,23 @@
     padding: 0 25px;
   }
 
-  .profile-row-col {
-    height: fit-content;
-  }
+.profile-row-col {
+  height: fit-content;
+}
 
-  .profile-title {
-    font-size: 23px;
-  }
+.profile-title {
+  font-size: 23px;
+}
 
-  .profile-reception-block  {
-    padding: 10px;
-    margin: 10px 0;
-  }
+.profile-reception-block  {
+  padding: 10px;
+  margin: 10px 0;
+}
 
-  .profile-reception-block-title {
-    font-weight: 900;
-  }
+.profile-reception-block-title {
+  font-weight: 900;
+}
+
+.reception-data {
+  text-align: center;
+}

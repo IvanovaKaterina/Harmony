@@ -104,7 +104,7 @@ class ServiceRegistryInputs extends React.Component {
     </>
     } else inputs = null;
     return (
-      <div className="col-auto service-registry" >
+      <div className="service-registry" >
         <div className="service-registry-title text-center">
             Запись на услугу
         </div>

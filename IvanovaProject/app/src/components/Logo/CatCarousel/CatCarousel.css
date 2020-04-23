@@ -1,0 +1,37 @@
+.carouselBlock {
+  position: relative;
+}
+
+.carouselText span {
+  display: block;
+}
+
+.carouselText1 {
+  position: absolute;
+  top: 100px;
+  left: 30px;
+  width: 350px;
+}
+
+.carouselText2 {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  width: 300px;
+}
+
+.carouselText3 {
+  position: absolute;
+  top: 100px;
+  left: 400px;
+  right: 30px;
+}
+
+.carouselText-title {
+  font-size: 25px;
+}
+
+.carouselText-body {
+  font-size: 20px;
+  margin-top: 10px;
+}
